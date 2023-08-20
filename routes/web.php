@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard.index');
+});
+
+Route::prefix('categories')->group(function () {
+    Route::get('/show-categories', [
+        'as' => 'categories.show-categories',
+        'uses' => 'CategoriesController@show_categories'
+    ]);
+
+    Route::get('/add-categories', [
+        'as' => 'categories.add-categories',
+        'uses' => 'CategoriesController@add_categories'
+    ]);
 });
