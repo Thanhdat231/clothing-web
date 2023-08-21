@@ -13,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- //market-->
         <div class="row" style="margin-bottom: 5px">
             <div class="col-md-12 text-right">
+             
 
                 <a href="{{ route('categories.add-categories') }}" class="btn btn-primary" style="right: 0">Thêm</a>
             </div>

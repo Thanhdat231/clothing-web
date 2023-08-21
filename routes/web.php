@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
+
+
 Route::prefix('categories')->group(function () {
     Route::get('/show-categories', [
         'as' => 'categories.show-categories',
@@ -26,5 +28,9 @@ Route::prefix('categories')->group(function () {
     Route::get('/add-categories', [
         'as' => 'categories.add-categories',
         'uses' => 'CategoriesController@add_categories'
+    ]);
+    Route::post('/store-categories', [
+        'as' => 'categories.store-categories',
+        'uses' => 'CategoriesController@store_categories'
     ]);
 });

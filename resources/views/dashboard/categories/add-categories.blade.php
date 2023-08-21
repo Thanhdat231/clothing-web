@@ -14,19 +14,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      
         <div class="row">
             <div class="col-md-6">
-                <form>
+                <form action="{{ route('categories.store-categories') }}" method="POST">
+                  @csrf
                 <div class="form-group">
                   <label for="">Tên danh mục</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên danh mục">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Chọn danh mục cha</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                    <select class="form-control" name="parent_id" id="exampleFormControlSelect1">
+                      <option value="0">Chọn danh mục cha</option>
+                      {!! $htmlOption !!}
                     </select>
                   </div>
                 
